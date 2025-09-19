@@ -122,7 +122,7 @@ public class MLS_MPM_Intro_SingleThreaded : MonoBehaviour {
 
             // quadratic interpolation weights
             uint2 cell_idx = (uint2)p.x;
-            float2 cell_diff = (p.x - cell_idx) - 0.5f;
+            float2 cell_diff = p.x - cell_idx;
             weights[0] = 0.5f * math.pow(0.5f - cell_diff, 2);
             weights[1] = 0.75f - math.pow(cell_diff, 2);
             weights[2] = 0.5f * math.pow(0.5f + cell_diff, 2);
